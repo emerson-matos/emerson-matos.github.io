@@ -1,15 +1,16 @@
-// gitprofile.config.ts
+// gitprofile.config.js
 
 const CONFIG = {
   github: {
-    username: 'arifszn', // Your GitHub org/user name. (This is the only required config)
+    username: 'emerson-matos', // Your GitHub org/user name. (Required)
+    sortBy: 'stars', // stars | updated
+    limit: 10, // How many projects to display.
+    exclude: {
+      forks: false, // Forked projects will not be displayed if set to true.
+      projects: [], // These projects will not be displayed. example: ['my-project1', 'my-project2']
+    },
   },
-  /**
-   * If you are deploying to https://<USERNAME>.github.io/, for example your repository is at https://github.com/arifszn/arifszn.github.io, set base to '/'.
-   * If you are deploying to https://<USERNAME>.github.io/<REPO_NAME>/,
-   * for example your repository is at https://github.com/arifszn/portfolio, then set base to '/portfolio/'.
-   */
-  base: '/gitprofile/',
+  base: '/',
   projects: {
     github: {
       display: true, // Display GitHub projects?
@@ -25,41 +26,55 @@ const CONFIG = {
       },
       manual: {
         // Properties for manually specifying projects
-        projects: ['arifszn/gitprofile', 'arifszn/pandora'], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
+        projects: [], // List of repository names to display. example: ['arifszn/my-project1', 'arifszn/my-project2']
       },
     },
     external: {
-      header: 'My Projects',
+      header: 'My projects',
       // To hide the `External Projects` section, keep it empty.
       projects: [
         {
-          title: 'Project Name',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
+          title: 'Dinorun',
+          description: 'A webassembly Dino Run like',
           imageUrl:
-            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-          link: 'https://example.com',
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/WebAssembly_Logo.svg/121px-WebAssembly_Logo.svg.png',
+          link: 'https://emerson-matos.github.io/comp-grafica/comp-grafica/projeto1/projeto1.html',
         },
         {
-          title: 'Project Name',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut.',
+          title: 'ScreenSaver',
+          description: 'A webassembly application, a screensaver like.',
           imageUrl:
-            'https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg',
-          link: 'https://example.com',
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/WebAssembly_Logo.svg/121px-WebAssembly_Logo.svg.png',
+          link: 'https://emerson-matos.github.io/comp-grafica/comp-grafica/projeto2/projeto2.html',
+        },
+        {
+          title: 'ScreenSaver Improved',
+          description:
+            'A webassembly application, a screensaver like improved.',
+          imageUrl:
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/WebAssembly_Logo.svg/121px-WebAssembly_Logo.svg.png',
+          link: 'https://emerson-matos.github.io/comp-grafica/comp-grafica/projeto2/imp/projeto2imp.html',
+        },
+        {
+          title: 'Death Star',
+          description:
+            'A webassembly application, you will be able to interact with a Death Star 3D model.',
+          imageUrl:
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/WebAssembly_Logo.svg/121px-WebAssembly_Logo.svg.png',
+          link: 'https://emerson-matos.github.io/comp-grafica/comp-grafica/projeto3/projeto3.html',
         },
       ],
     },
   },
   seo: {
-    title: 'Portfolio of Ariful Alam',
+    title: 'Portfolio of Emerson Matos',
     description: '',
     imageURL: '',
   },
   social: {
-    linkedin: 'ariful-alam',
-    x: 'arif_szn',
-    mastodon: 'arifszn@mastodon.social',
+    linkedin: 'emerson-matos',
+    x: 'emegsonn',
+    mastodon: '',
     researchGate: '',
     facebook: '',
     instagram: '',
@@ -69,98 +84,70 @@ const CONFIG = {
     udemy: '',
     dribbble: '',
     behance: '',
-    medium: 'arifszn',
-    dev: 'arifszn',
+    medium: '',
+    dev: '',
     stackoverflow: '', // example: '1/jeff-atwood'
     skype: '',
     telegram: '',
-    website: 'https://www.arifszn.com',
+    website: 'https://emerson-matos.github.io',
     phone: '',
-    email: 'arifulalamszn@gmail.com',
+    email: '',
   },
   resume: {
-    fileUrl:
-      'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf', // Empty fileUrl will hide the `Download Resume` button.
+    fileUrl: '', // Empty fileUrl will hide the `Download Resume` button.
   },
-  skills: [
-    'PHP',
-    'Laravel',
-    'JavaScript',
-    'React.js',
-    'Node.js',
-    'Nest.js',
-    'MySQL',
-    'PostgreSQL',
-    'Git',
-    'Docker',
-    'PHPUnit',
-    'CSS',
-    'Antd',
-    'Tailwind',
-  ],
+  skills: ['Clojure', 'Docker', 'Git', 'Java', 'JavaScript', 'React.js'],
   experiences: [
     {
-      company: 'Company Name',
-      position: 'Position',
-      from: 'September 2021',
+      company: 'Nubank',
+      position: 'Software Engineer',
+      from: 'July 2021',
       to: 'Present',
-      companyLink: 'https://example.com',
+      companyLink: 'https://www.linkedin.com/company/nubank/',
     },
     {
-      company: 'Company Name',
-      position: 'Position',
-      from: 'July 2019',
-      to: 'August 2021',
-      companyLink: 'https://example.com',
+      company: 'Itau Unibanco',
+      position: 'Software Engineer',
+      from: 'April 2019',
+      to: 'June 2021',
+      companyLink: 'https://www.linkedin.com/company/itau/',
+    },
+    {
+      company: 'Itau Unibanco',
+      position: 'Software Developer Intern',
+      from: 'June 2018',
+      to: 'Mar 2019',
+      companyLink: 'https://www.linkedin.com/company/itau/',
     },
   ],
-  certifications: [
+  /* certifications: [
     {
       name: 'Lorem ipsum',
       body: 'Lorem ipsum dolor sit amet',
       year: 'March 2022',
-      link: 'https://example.com',
+      link: 'https://example.com'
     },
-  ],
-  educations: [
+  ], */
+  education: [
     {
-      institution: 'Institution Name',
-      degree: 'Degree',
+      institution: 'UFABC',
+      degree: 'Bachelor in Computer Science',
       from: '2015',
-      to: '2019',
+      to: '2024',
     },
     {
-      institution: 'Institution Name',
-      degree: 'Degree',
-      from: '2012',
-      to: '2014',
+      institution: 'UFABC',
+      degree: 'Bachelor in Science and Technology',
+      from: '2015',
+      to: '2020',
     },
   ],
-  publications: [
-    {
-      title: 'Publication Title',
-      conferenceName: '',
-      journalName: 'Journal Name',
-      authors: 'John Doe, Jane Smith',
-      link: 'https://example.com',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    },
-    {
-      title: 'Publication Title',
-      conferenceName: 'Conference Name',
-      journalName: '',
-      authors: 'John Doe, Jane Smith',
-      link: 'https://example.com',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    },
-  ],
-  // Display articles from your medium or dev account. (Optional)
+
+  // Display blog posts from your medium or dev account. (Optional)
   blog: {
     source: 'dev', // medium | dev
-    username: 'arifszn', // to hide blog section, keep it empty
-    limit: 2, // How many articles to display. Max is 10.
+    username: '', // to hide blog section, keep it empty
+    limit: 2, // How many posts to display. Max is 10.
   },
   googleAnalytics: {
     id: '', // GA3 tracking id/GA4 tag id UA-XXXXXXXXX-X | G-XXXXXXXXXX
@@ -171,18 +158,18 @@ const CONFIG = {
     snippetVersion: 6,
   },
   themeConfig: {
-    defaultTheme: 'lofi',
+    defaultTheme: 'dracula',
 
     // Hides the switch in the navbar
     // Useful if you want to support a single color mode
-    disableSwitch: false,
+    disableSwitch: true,
 
     // Should use the prefers-color-scheme media-query,
     // using user system preferences, instead of the hardcoded defaultTheme
     respectPrefersColorScheme: false,
 
-    // Display the ring in Profile picture
-    displayAvatarRing: true,
+    // Hide the ring in Profile picture
+    hideAvatarRing: false,
 
     // Available themes. To remove any theme, exclude from here.
     themes: [
@@ -215,13 +202,10 @@ const CONFIG = {
       'night',
       'coffee',
       'winter',
-      'dim',
-      'nord',
-      'sunset',
       'procyon',
     ],
 
-    // Custom theme, applied to `procyon` theme
+    // Custom theme
     customTheme: {
       primary: '#fc055b',
       secondary: '#219aaf',
@@ -238,9 +222,7 @@ const CONFIG = {
       class="text-primary" href="https://github.com/arifszn/gitprofile"
       target="_blank"
       rel="noreferrer"
-    >GitProfile</a> and ❤️`,
-
-  enablePWA: true,
+    >GitProfile</a>  and ❤️`,
 };
 
 export default CONFIG;

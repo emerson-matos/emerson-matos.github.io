@@ -20,26 +20,26 @@ export default defineConfig({
     }),
     ...(CONFIG.enablePWA
       ? [
-          VitePWA({
-            registerType: 'autoUpdate',
-            workbox: {
-              navigateFallback: undefined,
-            },
-            includeAssets: ['logo.png'],
-            manifest: {
-              name: 'Portfolio',
-              short_name: 'Portfolio',
-              description: 'Personal Portfolio',
-              icons: [
-                {
-                  src: 'logo.png',
-                  sizes: '64x64 32x32 24x24 16x16 192x192 512x512',
-                  type: 'image/png',
-                },
-              ],
-            },
-          }),
-        ]
+        VitePWA({
+          registerType: 'autoUpdate',
+          workbox: {
+            navigateFallback: undefined,
+          },
+          includeAssets: ['logo.png'],
+          manifest: {
+            name: 'Portfolio',
+            short_name: 'Portfolio',
+            description: 'Personal Portfolio',
+            icons: [
+              {
+                src: 'logo.png',
+                sizes: '64x64 32x32 24x24 16x16 192x192 512x512',
+                type: 'image/png',
+              },
+            ],
+          },
+        }),
+      ]
       : []),
   ],
   define: {
